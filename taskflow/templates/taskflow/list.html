@@ -1,0 +1,21 @@
+{% extends 'taskflow/base.html' %}
+{% block head %}{% endblock head %}
+{% block title %}
+List
+{% endblock title %}
+{% block body %}
+<div class="list">
+    {% for d in data %}
+    <ul>
+        <li>
+            <h1>{{d.title}}</h1>
+            <br>
+            <p> <b>Description</b> {{d.description}}</p>
+            <br>
+            <i> <b>Status</b> {{d.todo_status}}</i>
+            <p> <a href="{% url 'task_update' id=d.id %}">Update</a> <a href="{% url 'delete_task' id=d.id %}">Delete</a> </p>
+        </li>
+    </ul>
+    {% endfor %}
+</div>
+{% endblock body %}

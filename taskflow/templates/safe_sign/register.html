@@ -1,0 +1,23 @@
+{% extends 'safe_sign/base.html' %}
+<!-- head block -->
+{% block head %}
+{% endblock head %}
+<!-- title block -->
+{% block title %}Registration Form{% endblock title %}
+<!-- block body -->
+{% block body %}
+<div class="regiatration_form">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="f_name">First Name</label>
+        <input type="text" name="f_name" id="">
+        <label for="l_name">Last Name</label>
+        <input type="text" name="l_name" id="">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="">
+        <button type="submit">Register</button>
+    </form>
+</div>
+{% endblock body %}

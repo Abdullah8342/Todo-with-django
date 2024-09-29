@@ -1,0 +1,12 @@
+{% extends 'taskflow/base.html' %}
+{% block head %}{% endblock head %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+<div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock body %}
