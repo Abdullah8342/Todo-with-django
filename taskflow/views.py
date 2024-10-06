@@ -70,7 +70,7 @@ def password_reset(request):
 
         try:
             user = User.objects.get(username = username)
-        except User.DoesNotExist:
+        except user.DoesNotExist():
             return HttpResponse('Invalid Username')
         username = user.username
         return redirect('change_password',username = username)
@@ -131,7 +131,8 @@ def todo_list(request):
         return render(request,'taskflow/list.html',{'data':'Empty lsit'})
 
 def task_update(request,id):
-    item = get_object_or_404(Todo,id = id)
+    user_id = request.user.id
+    item = get_object_or_404(Todo,id = id ,user_id = user_id)
     if request.method == 'POST':
         form = FormTodo(request.POST,instance=item)
         if form.is_valid():

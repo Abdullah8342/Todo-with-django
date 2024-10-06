@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
     {% block head %}{% endblock head %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'taskflow/style/Base.css' %}">
 </head>
 <body>
+    <div class="top-bar">
+        <div class="auth-links">
+            {% if user.is_authenticated %}
+                <p><a href="{% url 'logout_page' %}">LogOut</a></p>
+            {% else %}
+                <p><a href="{% url 'login_page' %}">LogIn</a></p>
+            {% endif %}
+        </div>
+    </div>
     {% block body %}{% endblock body %}
 </body>
 </html>
