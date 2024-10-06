@@ -1,18 +1,21 @@
 {% extends 'safe_sign/base.html' %}
+{% load static %}
 <!-- head block -->
 {% block head %}
+<link rel="stylesheet" href="{% static 'taskflow/style/LogIn.css' %}">
 {% endblock head %}
 <!-- title block -->
 {% block title %}Login Form{% endblock title %}
 <!-- block body -->
 {% block body %}
 <div class="lgoin_form">
+    <h2>Login</h2>
     <form action="" method="POST">
         {% csrf_token %}
         <label for="username">Username</label>
-        <input type="text" name="username">
+        <input type="text" name="username" required>
         <label for="password">Password</label>
-        <input type="password" name="password" id="">
+        <input type="password" name="password" id="password" required>
         <button type="submit">Login</button>
     </form>
 </div>

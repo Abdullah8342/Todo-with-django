@@ -1,22 +1,25 @@
 {% extends 'safe_sign/base.html' %}
+{% load static %}
 <!-- head block -->
 {% block head %}
+<link rel="stylesheet" href="{% static 'taskflow/style/Register.css' %}">
 {% endblock head %}
 <!-- title block -->
 {% block title %}Registration Form{% endblock title %}
 <!-- block body -->
 {% block body %}
-<div class="regiatration_form">
+<div class="registration_form">
+    <h2>Register</h2>
     <form action="" method="POST">
         {% csrf_token %}
         <label for="f_name">First Name</label>
-        <input type="text" name="f_name" id="">
+        <input type="text" name="f_name" id="f_name" required>
         <label for="l_name">Last Name</label>
-        <input type="text" name="l_name" id="">
+        <input type="text" name="l_name" id="l_name" required>
         <label for="username">Username</label>
-        <input type="text" name="username" id="">
+        <input type="text" name="username" id="username" required>
         <label for="password">Password</label>
-        <input type="password" name="password" id="">
+        <input type="password" name="password" id="password" required>
         <button type="submit">Register</button>
     </form>
 </div>

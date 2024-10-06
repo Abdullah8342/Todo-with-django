@@ -1,14 +1,27 @@
 {% extends 'taskflow/base.html' %}
-{% block head %}{% endblock head %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'taskflow/style/Register.css' %}">
+{% endblock head %}
 {% block title %}
 Update Task
 {% endblock title %}
 {% block body %}
-<div class="update">
-    <form action="" method="POST">
+<div class="todo_form_container">
+    <h2>Update Todo</h2>
+    <form method="POST" action="">
         {% csrf_token %}
-        {{form}}
-        <button type="submit">Update</button>
+        
+        <label for="title">Title</label>
+        {{ form.title }}
+
+        <label for="description">Description</label>
+        {{ form.description }}
+
+        <label for="todo_status">Status</label>
+        {{ form.todo_status }}
+
+        <button type="submit">Submit</button>
     </form>
 </div>
 {% endblock body %}

@@ -1,11 +1,24 @@
 {% extends 'taskflow/base.html' %}
-{% block head %}{% endblock head %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'taskflow/style/Home.css' %}">
+{% endblock head %}
 {% block title %}Home{% endblock title %}
 {% block body %}
-<div>
-    <form action="" method="POST">
+<div class="todo_form_container">
+    <h2>Create a New Todo</h2>
+    <form method="POST" action="">
         {% csrf_token %}
-        {{form}}
+        
+        <label for="title">Title</label>
+        {{ form.title }}
+
+        <label for="description">Description</label>
+        {{ form.description }}
+
+        <label for="todo_status">Status</label>
+        {{ form.todo_status }}
+
         <button type="submit">Submit</button>
     </form>
 </div>

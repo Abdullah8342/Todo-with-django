@@ -1,5 +1,8 @@
 {% extends 'taskflow/base.html' %}
-{% block head %}{% endblock head %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'taskflow/style/List.css' %}">
+{% endblock head %}
 {% block title %}
 List
 {% endblock title %}

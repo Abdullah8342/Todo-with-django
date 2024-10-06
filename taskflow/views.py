@@ -18,7 +18,6 @@ from django.http import HttpResponse
 from .models import Todo
 from .forms import FormTodo
 
-from datetime import datetime
 # Create your views here.
 
 # registration page
@@ -60,7 +59,7 @@ def login_page(request):
             return redirect('login_page')
         else:
             login(request,user)
-            return redirect('home')
+            return redirect('TaskFlowHome') # return to Task home page
     return render(request,'safe_sign/login.html')
 
 
